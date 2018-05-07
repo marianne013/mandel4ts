@@ -3,12 +3,12 @@ from mandelbrot import *
 # 4K  3840  x 2160
 # 8K  7680  x 4320
 # 16K 15360 x 8640 
-image_width = 15360 
-image_height = 8640
+image_width = 3000 
+image_height = 3000
 maxIter = 500
     
 files_content = list()
-for l in range(0,15000, 500):
+for l in range(0,3000, 500):
     files_content=files_content+open('data_%s.txt' % l).readlines()
 
 print('Store data')
