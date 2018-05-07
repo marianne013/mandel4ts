@@ -267,7 +267,7 @@ if __name__ == '__main__':
     # 4K  3840  x 2160
     # 8K  7680  x 4320
     # 16K 15360 x 8640 
-    (image_width, image_height) = (3840, 2160)
+    (image_width, image_height) = (3000, 3000)
     # (image_width, image_height) = (300, 300)
     centerX = -0.5
     centerY = 0.0
