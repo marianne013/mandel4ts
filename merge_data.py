@@ -1,3 +1,5 @@
+#!/bin/env python
+
 ''' Merge all text files in current working directory
 '''
 from glob import glob
