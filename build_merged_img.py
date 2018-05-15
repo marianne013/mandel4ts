@@ -1,3 +1,5 @@
+#!/bin/env python
+
 ''' Create BitMap from "merged" data file
 '''
 from mandelbrot import *
