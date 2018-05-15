@@ -1,4 +1,4 @@
-#!/Users/arrabito/anaconda/bin/python
+#!/bin/env python
 
 """ The mandelbrot application is building a colorized Mandelbrot set image
 """
