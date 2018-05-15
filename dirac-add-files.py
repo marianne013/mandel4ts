@@ -24,7 +24,7 @@ def addDataFiles( args ):
 
     outputPath = args[0]
     outputPattern = args[1]
-    ouputSE = args[2]
+    outputSE = args[2]
     metadata = args[3]
     metadata = json.loads( metadata )
 
