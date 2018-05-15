@@ -21,13 +21,18 @@ def addDataFiles( args ):
 
     fcc = FileCatalogClient()
     dm = DataManager( ['DIRACFileCatalog','TSCatalog'] )
-    
+
     outputPath = args[0]
     outputPattern = args[1]
-    SE = args[2]
+    ouputSE = args[2]
     metadata = args[3]
     metadata = json.loads( metadata )
 
+    ## Create path
+    res = fcc.createDirectory( outputPath )
+    if not res['OK']:
+      return res
+  
     ##  Set metadata
     for key, value in metadata.items():
       res = fcc.setMetadata( outputPath, {key:value} )
@@ -43,15 +48,15 @@ def addDataFiles( args ):
   
     for one_file in all_files:
       lfn = os.path.join( outputPath , one_file )
-      msg = 'Try to upload local file: %s \nwith LFN: %s \nto %s' % ( one_file, lfn, SE )
+      msg = 'Try to upload local file: %s \nwith LFN: %s \nto %s' % ( one_file, lfn, outputSE )
       DIRAC.gLogger.notice( msg )
-      res = dm.putAndRegister( lfn, one_file, SE )
+      res = dm.putAndRegister( lfn, one_file, outputSE )
       ##  Check if failed
       if not res['OK']:
-        DIRAC.gLogger.error( 'Failed to putAndRegister %s \nto %s \nwith message: %s' % ( lfn, SE, res['Message'] ) )
+        DIRAC.gLogger.error( 'Failed to putAndRegister %s \nto %s \nwith message: %s' % ( lfn, outputSE, res['Message'] ) )
         return res
       elif res['Value']['Failed'].has_key( lfn ):
-        DIRAC.gLogger.error( 'Failed to putAndRegister %s to %s' % ( lfn, SE ) )
+        DIRAC.gLogger.error( 'Failed to putAndRegister %s to %s' % ( lfn, outputSE ) )
         return res
 
     return DIRAC.S_OK()
