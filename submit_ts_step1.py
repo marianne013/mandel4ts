@@ -17,7 +17,7 @@ def submitTS():
   job.workflow.addParameter( Parameter( "JOB_ID", "000000", "string", "", "", True, False, "Initialize JOB_ID" ) )   
   job.setExecutable('git clone https://github.com/bregeon/mandel4ts.git')
   job.setExecutable('./mandel4ts/mandelbrot2.py',arguments="-P 0.0005 -M 1000 -L @{JOB_ID} -N 200")
-  job.setOutputData( ['data*.txt'],outputPath='mandelbrot/test/images/raw')
+  job.setOutputData( ['data*.txt'],outputPath='mandelbrot/images/raw')
   
   t = Transformation()
 
