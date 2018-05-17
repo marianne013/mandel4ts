@@ -20,7 +20,7 @@ from DIRAC.DataManagementSystem.Client.DataManager import DataManager
 def addDataFiles( args ):
 
     fcc = FileCatalogClient()
-    dm = DataManager( ['DIRACFileCatalog','TSCatalog'] )
+    dm = DataManager( ['FileCatalog','TSCatalog'] )
 
     outputPath = args[0]
     outputPattern = args[1]
