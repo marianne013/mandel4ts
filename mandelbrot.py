@@ -293,7 +293,7 @@ if __name__ == '__main__':
         precision = float(v)
 
       if o in ['-L','--start_line']:
-        start_line = int(v)
+        start_line = int(v)*200
       if o in ['-N','--n_lines']:
         n_lines = int(v)
 
@@ -311,8 +311,10 @@ if __name__ == '__main__':
         usage()
         sys.exit(0)                       
 
-    if args:
-      output = args[0]
+    #if args:
+      #output = args[0]
+
+    output = 'data_'+str(start_line)+'.bmp'
 
     #centerX = -0.46490
     #centerY = -.56480
