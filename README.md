@@ -4,4 +4,7 @@ Mandelbrot scripts for a hackaton on the Dirac Transformation System
 * make_img.py merges output data of mandelbrot.py and creates a bitmap
 * dumb.csh launched multiple mandelbrot programs on the computer
 * merged_data.py merged output data of mandelbrot.py and create an output data file (not a bitmap)
-* build_merged_img.py created a bitmap from a merged data file
+* build_merged_img.py created a bitmap of the Mandelbrot set from a merged data file
+
+https://en.wikipedia.org/wiki/Mandelbrot_set
+
