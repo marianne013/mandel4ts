@@ -36,8 +36,9 @@ def addDataFiles( args ):
     ##  Set metadata
     for key, value in metadata.items():
       res = fcc.setMetadata( outputPath, {key:value} )
-      if not res['OK']:
-        return res
+      # terrible hack
+      # if not res['OK']:
+      #  return res
 
     ## Upload data files
     all_files = glob.glob(outputPattern)
